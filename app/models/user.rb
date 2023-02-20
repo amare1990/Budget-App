@@ -7,5 +7,5 @@ class User < ApplicationRecord
   has_many :my_transactions
   has_many :categories
 
-  validates :name, presence: true, length: { in: 2..50 }
+  validates :name, presence: true, length: { in: 5..50 }
 end
