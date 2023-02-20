@@ -74,3 +74,6 @@ gem 'image_processing', '~> 1.12', '>= 1.12.1'
 
 # Devise gem
 gem 'devise'
+
+# email confirmation using the browser itself
+gem "letter_opener", group: :development
