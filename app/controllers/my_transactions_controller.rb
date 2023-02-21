@@ -1,9 +1,16 @@
 class MyTransactionsController < ApplicationController
+  # load_and_authorize_resource except: %i[show]
+
   before_action :set_my_transaction, only: %i[ show edit update destroy ]
+
+  before_action :set_user
+  before_action :set_category
+  before_action :set_category_my_transaction
 
   # GET /my_transactions or /my_transactions.json
   def index
-    @my_transactions = MyTransaction.all
+    # @my_transactions = MyTransaction.all
+    @my_transaction = @category.my_transactions
   end
 
   # GET /my_transactions/1 or /my_transactions/1.json
@@ -22,9 +29,11 @@ class MyTransactionsController < ApplicationController
   # POST /my_transactions or /my_transactions.json
   def create
     @my_transaction = MyTransaction.new(my_transaction_params)
+    @my_transaction.user = @user
 
     respond_to do |format|
       if @my_transaction.save
+        CategoryMytransaction.create!(category_id: @category.id, my_transaction_id: @my_transaction.id)
         format.html { redirect_to my_transaction_url(@my_transaction), notice: "My transaction was successfully created." }
         format.json { render :show, status: :created, location: @my_transaction }
       else
@@ -61,6 +70,19 @@ class MyTransactionsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_my_transaction
       @my_transaction = MyTransaction.find(params[:id])
+    end
+
+    def set_user
+      @user = current_user
+    end
+
+    def set_category
+      @category = Category.find(params[:category_id])
+    end
+
+    def set_category_my_transaction
+      @category_my_transaction = CategoryMytransaction.where(category_id: params[:category_id]).
+      order(created_at: :desc)
     end
 
     # Only allow a list of trusted parameters through.
