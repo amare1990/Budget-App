@@ -5,6 +5,8 @@
 <br>
 
 <div>
-  <%= link_to "Show this my transaction", @my_transaction %> |
-  <%= link_to "Back to my transactions", my_transactions_path %>
+  <%= link_to "Show this my transaction", category_my_transaction_path(category_id: @category.id,
+  id: @my_transaction.id) %> |
+  <%= link_to "Back to my transactions", category_my_transaction_path(category_id: @category.id,
+  id: @my_transaction.id) %>
 </div>

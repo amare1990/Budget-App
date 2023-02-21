@@ -3,8 +3,11 @@
 <%= render @my_transaction %>
 
 <div>
-  <%= link_to "Edit this my transaction", edit_my_transaction_path(@my_transaction) %> |
-  <%= link_to "Back to my transactions", my_transactions_path %>
+  <%= link_to "Edit this my transaction", edit_category_my_transaction_path(category_id: @category.id,
+  id: @my_transaction.id) %> |
+  <%= link_to "Back to my transactions", category_my_transactions_path(category_id: @category.id) %>
 
-  <%= button_to "Destroy this my transaction", @my_transaction, method: :delete %>
+  <%= button_to "Destroy this my transaction", category_my_transaction_path(category_id: @category.id,
+  id: @my_transaction.id),
+   method: :delete %>
 </div>

@@ -12,6 +12,7 @@ class MyTransactionsController < ApplicationController
     # authorize! :manage, @category
     # @my_transactions = MyTransaction.all
     @my_transactions = @category.my_transactions
+    @category_my_transactions = @category.category_my_transactions
   end
 
   # GET /my_transactions/1 or /my_transactions/1.json
@@ -48,7 +49,7 @@ class MyTransactionsController < ApplicationController
   def update
     respond_to do |format|
       if @my_transaction.update(my_transaction_params)
-        format.html { redirect_to my_transaction_url(@my_transaction), notice: "My transaction was successfully updated." }
+        format.html { redirect_to category_my_transactions_url(category_id: @category.id, id: @my_transaction.id), notice: "My transaction was successfully updated." }
         format.json { render :show, status: :ok, location: @my_transaction }
       else
         format.html { render :edit, status: :unprocessable_entity }
