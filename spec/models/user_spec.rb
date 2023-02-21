@@ -32,5 +32,10 @@ RSpec.describe User, type: :model do
     it "\n The user object should be invalid if the name char length is less than 5 characters" do
       expect(subject).not_to be_valid
     end
+
+    it "\n The user object should be invalid if the name char length is less than 5 characters" do
+      subject.name = "a" * 51
+      expect(subject).not_to be_valid
+    end
   end
 end
