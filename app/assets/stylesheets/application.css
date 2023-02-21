@@ -13,3 +13,50 @@
  *= require_tree .
  *= require_self
  */
+
+@import url('https://fonts.cdnfonts.com/css/proxima-nova-2');
+@import 'pages/splash-screen.css';
+@import 'pages/register.css';
+@import 'pages/login.css';
+
+:root {
+--red: #bd3b1b;
+--red2: #d9370fdb;
+--blue: #3778c2;
+--blue2: #008cba;
+--green: #5fb523;
+--orange: #d8a800;
+--white: #fff;
+--grey: #f1f3f2;
+--grey2: #e8eae9;
+--grey3: #c7ccca;
+--black: #262729;
+--dark: #434b54d2;
+--principalFont: 'Proxima Nova', sans-serif;
+}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+background-color: var(--white);
+}
+
+html {
+  overflow-y: scroll;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--grey2);
+}
+
+.wrapper {
+  min-width: 375px;
+  max-width: 767.98px;
+  height: 100vh;
+  margin: 20px 0;
+}
