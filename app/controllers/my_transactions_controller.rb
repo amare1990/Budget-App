@@ -60,10 +60,16 @@ class MyTransactionsController < ApplicationController
 
   # DELETE /my_transactions/1 or /my_transactions/1.json
   def destroy
-    @my_transaction.destroy
+    # @category_my_transaction.destroy
+    @category_my_transactions = CategoryMyTransaction.where(category_id: @category.id,
+    my_transaction_id: @my_transaction.id)
+
+    @category_my_transactions.each do |category_my_transaction|
+      category_my_transaction.destroy
+    end
 
     respond_to do |format|
-      format.html { redirect_to my_transactions_url, notice: "My transaction was successfully destroyed." }
+      format.html { redirect_to category_my_transactions_url(category_id: @category.id), notice: "My transaction was successfully destroyed." }
       format.json { head :no_content }
     end
   end
