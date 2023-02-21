@@ -9,8 +9,9 @@ class MyTransactionsController < ApplicationController
 
   # GET /my_transactions or /my_transactions.json
   def index
+    # authorize! :manage, @category
     # @my_transactions = MyTransaction.all
-    @my_transaction = @category.my_transactions
+    @my_transactions = @category.my_transactions
   end
 
   # GET /my_transactions/1 or /my_transactions/1.json
@@ -33,8 +34,8 @@ class MyTransactionsController < ApplicationController
 
     respond_to do |format|
       if @my_transaction.save
-        CategoryMytransaction.create!(category_id: @category.id, my_transaction_id: @my_transaction.id)
-        format.html { redirect_to my_transaction_url(@my_transaction), notice: "My transaction was successfully created." }
+        CategoryMyTransaction.create!(category_id: @category.id, my_transaction_id: @my_transaction.id)
+        format.html { redirect_to category_my_transactions_url(category_id: @category.id), notice: "My transaction was successfully created." }
         format.json { render :show, status: :created, location: @my_transaction }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -81,8 +82,7 @@ class MyTransactionsController < ApplicationController
     end
 
     def set_category_my_transaction
-      @category_my_transaction = CategoryMytransaction.where(category_id: params[:category_id]).
-      order(created_at: :desc)
+      @category_my_transaction = CategoryMyTransaction.where({category_id: params[:category_id]}).order(created_at: :desc)
     end
 
     # Only allow a list of trusted parameters through.
