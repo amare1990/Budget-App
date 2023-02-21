@@ -9,7 +9,7 @@ RSpec.describe User, type: :model do
 
   describe "\nmodel testing" do
 
-    it "\nshould display invalid input for empty full name" do
+    it "\nshould be valid" do
       expect(@user).to be_valid
     end
 
@@ -33,7 +33,7 @@ RSpec.describe User, type: :model do
       expect(subject).not_to be_valid
     end
 
-    it "\n The user object should be invalid if the name char length is less than 5 characters" do
+    it "\n The user object should be invalid if the name char length is greater than 50 characters" do
       subject.name = "a" * 51
       expect(subject).not_to be_valid
     end
