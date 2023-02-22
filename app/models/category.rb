@@ -1,4 +1,6 @@
 class Category < ApplicationRecord
+  include ImageUploader::Attachment(:image)
+
   belongs_to :user
 
   has_many :category_my_transactions, dependent: :destroy
