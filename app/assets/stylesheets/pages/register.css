@@ -4,7 +4,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
- /*  gap: 30px; */
+
+  /*  gap: 30px; */
 }
 
 .new_user {

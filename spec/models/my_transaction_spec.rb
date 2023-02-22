@@ -2,21 +2,20 @@ require 'rails_helper'
 
 RSpec.describe MyTransaction, type: :model do
   before(:each) do
-    @user = User.create!(name: "Shegaw M. gobeze", email: "sheg@budgetapp.com",
-    password: "0931234567")
-    @categ = Category.create!(name: "food", user: @user)
-    @categ2 = Category.create!(name: "Shelter", user: @user)
-    @my_transaction = MyTransaction.create!(name: "Beyaynet", amount: 2, user: @user)
-    @my_transaction2 = MyTransaction.create!(name: "Firfir", amount: 3, user: @user)
+    @user = User.create!(name: 'Shegaw M. gobeze', email: 'sheg@budgetapp.com',
+                         password: '0931234567')
+    @categ = Category.create!(name: 'food', user: @user)
+    @categ2 = Category.create!(name: 'Shelter', user: @user)
+    @my_transaction = MyTransaction.create!(name: 'Beyaynet', amount: 2, user: @user)
+    @my_transaction2 = MyTransaction.create!(name: 'Firfir', amount: 3, user: @user)
 
     @category_my_transaction = CategoryMyTransaction.create!(category: @categ,
-    my_transaction: @my_transaction)
+                                                             my_transaction: @my_transaction)
     @category_my_transaction2 = CategoryMyTransaction.create!(category: @categ,
-    my_transaction: @my_transaction2)
+                                                              my_transaction: @my_transaction2)
   end
 
   describe "\nmodel testing" do
-
     it "\nshould be valid" do
       expect(@my_transaction).to be_valid
     end
@@ -44,9 +43,9 @@ RSpec.describe MyTransaction, type: :model do
 
   describe "\n model validation testing" do
     subject do
-      @user = User.create!(name: "Sim A. Desta", email: "simegnaw@budgetapp.com",
-    password: "0931234567")
-      @my_transaction = MyTransaction.new(name: "AB", user: @user)
+      @user = User.create!(name: 'Sim A. Desta', email: 'simegnaw@budgetapp.com',
+                           password: '0931234567')
+      @my_transaction = MyTransaction.new(name: 'AB', user: @user)
     end
 
     it "\n The MyTransaction object should be invalid if the name is blank" do
@@ -59,7 +58,7 @@ RSpec.describe MyTransaction, type: :model do
     end
 
     it "\n The MyTransaction object should be invalid if the name char length is greater than 30 charactors" do
-      subject.name = "a" * 31
+      subject.name = 'a' * 31
       expect(subject).not_to be_valid
     end
 
@@ -72,7 +71,5 @@ RSpec.describe MyTransaction, type: :model do
       subject.amount = -1
       expect(subject).not_to be_valid
     end
-
   end
-
 end

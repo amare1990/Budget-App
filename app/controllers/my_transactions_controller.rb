@@ -1,7 +1,7 @@
 class MyTransactionsController < ApplicationController
   # load_and_authorize_resource except: %i[show]
 
-  before_action :set_my_transaction, only: %i[ show edit update destroy ]
+  before_action :set_my_transaction, only: %i[show edit update destroy]
 
   before_action :set_user
   before_action :set_category
@@ -16,8 +16,7 @@ class MyTransactionsController < ApplicationController
   end
 
   # GET /my_transactions/1 or /my_transactions/1.json
-  def show
-  end
+  def show; end
 
   # GET /my_transactions/new
   def new
@@ -25,8 +24,7 @@ class MyTransactionsController < ApplicationController
   end
 
   # GET /my_transactions/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /my_transactions or /my_transactions.json
   def create
@@ -36,7 +34,10 @@ class MyTransactionsController < ApplicationController
     respond_to do |format|
       if @my_transaction.save
         CategoryMyTransaction.create!(category_id: @category.id, my_transaction_id: @my_transaction.id)
-        format.html { redirect_to category_my_transactions_url(category_id: @category.id), notice: "My transaction was successfully created." }
+        format.html do
+          redirect_to category_my_transactions_url(category_id: @category.id),
+                      notice: 'My transaction was successfully created.'
+        end
         format.json { render :show, status: :created, location: @my_transaction }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -49,7 +50,10 @@ class MyTransactionsController < ApplicationController
   def update
     respond_to do |format|
       if @my_transaction.update(my_transaction_params)
-        format.html { redirect_to category_my_transactions_url(category_id: @category.id, id: @my_transaction.id), notice: "My transaction was successfully updated." }
+        format.html do
+          redirect_to category_my_transactions_url(category_id: @category.id, id: @my_transaction.id),
+                      notice: 'My transaction was successfully updated.'
+        end
         format.json { render :show, status: :ok, location: @my_transaction }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -62,38 +66,40 @@ class MyTransactionsController < ApplicationController
   def destroy
     # @category_my_transaction.destroy
     @category_my_transactions = CategoryMyTransaction.where(category_id: @category.id,
-    my_transaction_id: @my_transaction.id)
+                                                            my_transaction_id: @my_transaction.id)
 
-    @category_my_transactions.each do |category_my_transaction|
-      category_my_transaction.destroy
-    end
+    @category_my_transactions.each(&:destroy)
 
     respond_to do |format|
-      format.html { redirect_to category_my_transactions_url(category_id: @category.id), notice: "My transaction was successfully destroyed." }
+      format.html do
+        redirect_to category_my_transactions_url(category_id: @category.id),
+                    notice: 'My transaction was successfully destroyed.'
+      end
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_my_transaction
-      @my_transaction = MyTransaction.find(params[:id])
-    end
 
-    def set_user
-      @user = current_user
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_my_transaction
+    @my_transaction = MyTransaction.find(params[:id])
+  end
 
-    def set_category
-      @category = Category.find(params[:category_id])
-    end
+  def set_user
+    @user = current_user
+  end
 
-    def set_category_my_transaction
-      @category_my_transaction = CategoryMyTransaction.where(category_id: params[:category_id]).order(created_at: :desc)
-    end
+  def set_category
+    @category = Category.find(params[:category_id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def my_transaction_params
-      params.require(:my_transaction).permit(:name, :amount, :user_id)
-    end
+  def set_category_my_transaction
+    @category_my_transaction = CategoryMyTransaction.where(category_id: params[:category_id]).order(created_at: :desc)
+  end
+
+  # Only allow a list of trusted parameters through.
+  def my_transaction_params
+    params.require(:my_transaction).permit(:name, :amount, :user_id)
+  end
 end

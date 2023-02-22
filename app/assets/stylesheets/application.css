@@ -20,26 +20,26 @@
 @import 'pages/login.css';
 
 :root {
---red: #bd3b1b;
---red2: #d9370fdb;
---blue: #3778c2;
---blue2: #008cba;
---green: #5fb523;
---orange: #d8a800;
---white: #fff;
---grey: #f1f3f2;
---grey2: #e8eae9;
---grey3: #c7ccca;
---black: #262729;
---dark: #434b54d2;
---principalFont: 'Proxima Nova', sans-serif;
+  --red: #bd3b1b;
+  --red2: #d9370fdb;
+  --blue: #3778c2;
+  --blue2: #008cba;
+  --green: #5fb523;
+  --orange: #d8a800;
+  --white: #fff;
+  --grey: #f1f3f2;
+  --grey2: #e8eae9;
+  --grey3: #c7ccca;
+  --black: #262729;
+  --dark: #434b54d2;
+  --principalFont: 'Proxima Nova', sans-serif;
 }
 
 * {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-background-color: var(--white);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--white);
 }
 
 html {

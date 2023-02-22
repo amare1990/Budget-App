@@ -75,15 +75,15 @@ end
 gem 'rubocop', '>= 1.0', '< 2.0'
 
 # icon adding
-gem 'shrine', '~> 3.3'
 gem 'image_processing', '~> 1.12', '>= 1.12.1'
+gem 'shrine', '~> 3.3'
 
 # Devise gem
 gem 'devise'
 
 # email confirmation using the browser itself
-gem "letter_opener", group: :development
+gem 'letter_opener', group: :development
 
-#controllers/requests testing tool required
-gem 'rails-controller-testing'
+# controllers/requests testing tool required
 gem 'bullet', group: 'development'
+gem 'rails-controller-testing'

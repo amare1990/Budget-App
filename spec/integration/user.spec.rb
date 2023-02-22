@@ -16,6 +16,5 @@ RSpec.describe 'User accounts', type: :system do
       visit new_user_registration_path
       expect(page).to have_content('signup')
     end
-
   end
 end

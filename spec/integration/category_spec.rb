@@ -33,7 +33,7 @@ RSpec.describe 'Category Page', type: :system do
       expect(page).to have_current_path(new_category_path)
     end
 
-    it "should display buttons with text Detail" do
+    it 'should display buttons with text Detail' do
       expect(page).to have_content('Detail')
     end
   end

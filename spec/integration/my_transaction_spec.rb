@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'My Transaction Page', type: :system do
-  describe "my_transactions#index" do
+  describe 'my_transactions#index' do
     before :each do
       @user = User.create!(name: 'kefie G. Sim', email: 'kefie@budgetapp.com', password: '0913850328')
       @icon_file = fixture_file_upload(Rails.root.join('spec', 'fixtures', 'files', 'test.png'), 'image/png')
@@ -17,7 +17,7 @@ RSpec.describe 'My Transaction Page', type: :system do
       visit category_my_transactions_path(category_id: @categ.id)
     end
 
-    it "should display the name of the category" do
+    it 'should display the name of the category' do
       expect(page).to have_content(@categ.name)
     end
 

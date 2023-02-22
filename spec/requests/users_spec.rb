@@ -12,20 +12,19 @@ require 'rails_helper'
 # of tools you can use to make these specs even more expressive, but we're
 # sticking to rails and rspec-rails APIs to keep things simple and stable.
 
-RSpec.describe "/users", type: :request do
-
+RSpec.describe '/users', type: :request do
   # This should return the minimal set of attributes required to create a valid
   # User. As you add validations to User, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {
+  let(:valid_attributes) do
     # skip("Add a hash of attributes valid for your model")
-    let!(:user) { User.create(name: "Amare M. Kassa", email: "ame@budgetapp.com", password: "0913850328") }
-  }
+    let!(:user) { User.create(name: 'Amare M. Kassa', email: 'ame@budgetapp.com', password: '0913850328') }
+  end
 
-  let(:invalid_attributes) {
+  let(:invalid_attributes) do
     # skip("Add a hash of attributes invalid for your model")
-    let!(:user) { User.create(name: "A", email: "ame@budgetapp.com", password: "0913850328") }
-  }
+    let!(:user) { User.create(name: 'A', email: 'ame@budgetapp.com', password: '0913850328') }
+  end
 
   # describe "GET /index" do
   #   it "renders a successful response" do
@@ -43,15 +42,15 @@ RSpec.describe "/users", type: :request do
   #   end
   # end
 
-  describe "GET /new" do
-    it "renders a successful response" do
+  describe 'GET /new' do
+    it 'renders a successful response' do
       get new_user_registration_url
       expect(response).to be_successful
     end
   end
 
-  describe "GET /new" do
-    it "renders a successful response" do
+  describe 'GET /new' do
+    it 'renders a successful response' do
       get new_user_session_url
       expect(response).to be_successful
     end
@@ -85,7 +84,6 @@ RSpec.describe "/users", type: :request do
   #         post users_url, params: { user: invalid_attributes }
   #       }.to change(User, :count).by(0)
   #     end
-
 
   #     it "renders a response with 422 status (i.e. to display the 'new' template)" do
   #       post users_url, params: { user: invalid_attributes }

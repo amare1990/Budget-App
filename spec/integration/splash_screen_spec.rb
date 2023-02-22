@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Splash Screen Page', type: :system do
-  describe "SplashScreen /show" do
+  describe 'SplashScreen /show' do
     before :each do
       visit root_path
     end
@@ -27,7 +27,5 @@ RSpec.describe 'Splash Screen Page', type: :system do
       click_link 'SIGN UP'
       expect(page).to have_current_path(new_user_registration_path)
     end
-
   end
-
 end

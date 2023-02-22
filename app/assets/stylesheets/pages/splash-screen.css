@@ -22,7 +22,7 @@
 }
 
 .login-link {
-background-color: var(--blue);
-color: var(--white);
-text-align: center;
+  background-color: var(--blue);
+  color: var(--white);
+  text-align: center;
 }
