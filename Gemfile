@@ -75,8 +75,8 @@ end
 gem 'rubocop', '>= 1.0', '< 2.0'
 
 # icon adding
-gem 'image_processing', '~> 1.12', '>= 1.12.1'
 gem 'shrine', '~> 3.3'
+gem 'image_processing', '~> 1.12', '>= 1.12.1'
 
 # Devise gem
 gem 'devise'
