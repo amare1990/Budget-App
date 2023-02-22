@@ -17,7 +17,7 @@ RSpec.describe 'Category Page', type: :system do
     end
 
     it 'should display the name of the category' do
-      expect(page).to have_content(@category.name)
+      expect(page).to have_content(@categ.name)
     end
 
     it 'should display the title of the page' do
