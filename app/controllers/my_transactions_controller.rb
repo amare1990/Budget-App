@@ -1,5 +1,5 @@
 class MyTransactionsController < ApplicationController
-  # load_and_authorize_resource except: %i[show]
+  load_and_authorize_resource
 
   before_action :set_my_transaction, only: %i[show edit update destroy]
 
