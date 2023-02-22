@@ -86,3 +86,4 @@ gem "letter_opener", group: :development
 
 #controllers/requests testing tool required
 gem 'rails-controller-testing'
+gem 'bullet', group: 'development'
