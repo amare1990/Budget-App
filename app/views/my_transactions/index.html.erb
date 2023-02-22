@@ -7,7 +7,7 @@
 <div id="my_transactions">
   <% if @my_transactions.any? %>
     <div class="expenses">
-      <% @category_my_transactions.each_with_index do |category_my_transaction, index| %>
+      <% @category_my_transactions.includes(:my_transaction).each_with_index do |category_my_transaction, index| %>
       <div class="group">
         <% if false %>
           <div>
