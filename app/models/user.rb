@@ -8,4 +8,8 @@ class User < ApplicationRecord
   has_many :categories
 
   validates :name, presence: true, length: { in: 5..50 }
+
+  def admin?
+    role == 'admin'
+  end
 end
