@@ -1,5 +1,5 @@
 class Category < ApplicationRecord
-  include ImageUploader::Attachment(:image)
+  include IconUploader::Attachment(:icon)
 
   belongs_to :user
 
