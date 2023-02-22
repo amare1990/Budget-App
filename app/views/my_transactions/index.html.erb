@@ -13,9 +13,9 @@
         <div>
           <p><%= "#{index + 1})" %></p>
           <% if category_my_transaction.my_transaction.icon.attached?%>
-            <%= image_tag(group_expense.expense.icon) %>
+            <%= image_tag(category_my_transaction.my_transaction.icon) %>
           <%else%>
-            <%= image_tag('expense.png') %>
+            <%= image_tag('my_transaction.png') %>
           <%end%>
           <div> <% end %>
             <h2><%= category_my_transaction.my_transaction.name %></h2>
@@ -43,4 +43,6 @@
   </div>
 
 <%= link_to "Add my transaction", new_category_my_transaction_path(category_id: @category.id) %>
+<%= link_to "Back to categories", categories_path %>
+
 
