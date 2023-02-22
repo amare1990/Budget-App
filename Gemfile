@@ -87,7 +87,7 @@ gem 'letter_opener', group: :development
 # controllers/requests testing tool required
 gem 'bullet', group: 'development'
 
-#Usefull for controller testing
+# Usefull for controller testing
 gem 'rails-controller-testing'
 
 # Add authorization library
