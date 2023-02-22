@@ -6,43 +6,44 @@
 
 <div id="my_transactions">
   <% if @my_transactions.any? %>
-  <div class="expenses">
-    <% @category_my_transactions.each_with_index do |category_my_transaction, index| %>
+    <div class="expenses">
+      <% @category_my_transactions.each_with_index do |category_my_transaction, index| %>
       <div class="group">
-      <% if false %>
-        <div>
-          <p><%= "#{index + 1})" %></p>
-          <% if category_my_transaction.my_transaction.icon.attached?%>
-            <%= image_tag(category_my_transaction.my_transaction.icon) %>
-          <%else%>
-            <%= image_tag('my_transaction.png') %>
-          <%end%>
-          <div> <% end %>
-            <h2><%= category_my_transaction.my_transaction.name %></h2>
-            <% if Time.now - category_my_transaction.created_at <= 1.minute %>
-              <p><%= time_ago_in_words(category_my_transaction.created_at, include_seconds: true) %> ago</p>
-            <% elsif Time.now - category_my_transaction.created_at <= 24.hours %>
-              <p><%= time_ago_in_words(category_my_transaction.created_at) %> ago</p>
-            <% else %>
-              <p><%= category_my_transaction.created_at.strftime('%b %d, %Y') %></p>
-            <% end %>
-          </div>
-        </div>
-        <div class="list_gen">
-          <h3>$ <%= category_my_transaction.my_transaction.amount %></h3>
+        <% if false %>
           <div>
-            <button class="list_btn"><%= link_to 'Detail', category_my_transaction_path(category_id: @category.id, id: category_my_transaction.my_transaction_id) %> </button>
-          </div>
-        </div>
+            <p><%= "#{index + 1})" %></p>
+            <% if category_my_transaction.my_transaction.icon.attached?%>
+              <%= image_tag(category_my_transaction.my_transaction.icon) %>
+            <%else%>
+              <%= image_tag('my_transaction.png') %>
+            <%end%>
+          <div>
+        <% end %>
+        <h2><%= category_my_transaction.my_transaction.name %></h2>
+        <% if Time.now - category_my_transaction.created_at <= 1.minute %>
+          <p><%= time_ago_in_words(category_my_transaction.created_at, include_seconds: true) %> ago</p>
+        <% elsif Time.now - category_my_transaction.created_at <= 24.hours %>
+          <p><%= time_ago_in_words(category_my_transaction.created_at) %> ago</p>
+        <% else %>
+          <p><%= category_my_transaction.created_at.strftime('%b %d, %Y') %></p>
+        <% end %>
       </div>
-    <% end %>
     </div>
-    <% else %>
-    <p class="flash-notice">No expense present for this group</p>
-    <% end %>
-  </div>
+    <div class="list_gen">
+      <h3>$ <%= category_my_transaction.my_transaction.amount %></h3>
+      <div>
+        <button class="list_btn"><%= link_to 'Detail', category_my_transaction_path(category_id: @category.id, id: category_my_transaction.my_transaction_id) %> </button>
+      </div>
+    </div>
+  <% end %>
 
-<%= link_to "Add my transaction", new_category_my_transaction_path(category_id: @category.id) %>
-<%= link_to "Back to categories", categories_path %>
+  <% else %>
+    <p class="flash-notice">No expense present for this group</p>
+  <% end %>
+    <%= link_to "Add my transaction", new_category_my_transaction_path(category_id: @category.id) %>
+    <%= link_to "Back to categories", categories_path %>
+</div>
+
+
 
 
