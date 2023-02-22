@@ -6,7 +6,7 @@
   <% @categories.each do |category| %>
     <%= render category %>
     <p>
-      <%= link_to "Show this category", category %>
+      <%= link_to "Show this category", category_my_transactions_path(category_id: category.id) %>
     </p>
   <% end %>
 </div>

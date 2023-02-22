@@ -89,7 +89,7 @@ class MyTransactionsController < ApplicationController
     end
 
     def set_category_my_transaction
-      @category_my_transaction = CategoryMyTransaction.where({category_id: params[:category_id]}).order(created_at: :desc)
+      @category_my_transaction = CategoryMyTransaction.where(category_id: params[:category_id]).order(created_at: :desc)
     end
 
     # Only allow a list of trusted parameters through.
