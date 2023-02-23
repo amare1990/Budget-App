@@ -60,8 +60,6 @@ body {
   min-width: 375px;
   max-width: 767.98px;
   height: 100vh;
-
-  /* margin: 20px 0; */
 }
 
 a {
@@ -72,15 +70,14 @@ input {
   border: none;
   outline: none;
   border-bottom: 1px solid var(--grey);
-  padding: 1rem;
+  padding: 20px;
+  border-radius: 5px;
 }
 
 input:focus {
-  border: 0.8px solid var(--blue);
-  transform: scale(1);
+  border: 2px solid var(--blue);
 }
 
 input::placeholder {
   color: var(--grey4);
-  letter-spacing: 0.6px;
 }

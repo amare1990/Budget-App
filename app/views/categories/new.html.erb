@@ -1,11 +1,12 @@
-<div class="category-wrapper">
-  <h1>New category</h1>
+<div class="category-wrapper categ-add-wrapper">
+<div class="header header-categ-trans">
+  <%= link_to categories_path do %>
+    <%= image_tag('back.svg', class: "svg") %>
+  <% end %>
+  <h1>Add new category</h1>
+</div>
 
   <%= render "form", category: @category %>
 
   <br>
-
-  <div>
-    <%= link_to "Back to categories", categories_path %>
-  </div>
 </div>

@@ -14,9 +14,15 @@
   padding: 0 10px;
 }
 
-.header-categ-trans h1 {
+.header-categ-trans h1,
+.add-categ-title {
   color: var(--white);
   background-color: var(--blue);
+}
+
+.add-categ-title {
+  margin-bottom: 36px;
+  text-align: center;
 }
 
 .categ-icon {
@@ -52,12 +58,22 @@
 }
 
 .new-categ,
-.new-trans {
+.new-trans,
+.add-trans input {
   background-color: var(--blue);
   text-align: center;
   color: var(--white);
   margin-bottom: 20px;
   height: 30px;
+}
+
+.add-trans input {
+  width: 100%;
+  text-align: center;
+}
+
+.add-trans {
+  margin-top: 20px;
 }
 
 .new-categ a,
@@ -102,4 +118,23 @@
   height: 1.1rem;
   background-color: var(--blue);
   display: flex;
+}
+
+.field-image {
+  margin: 5px 0;
+}
+
+/* Add new category */
+.form-add-categ {
+  margin-top: 20px;
+  background-color: var(--white
+  )
+}
+
+.add-new-wrapper {
+  background-color: var(--grey3);
+}
+
+.categ-add-wrapper {
+  background-color: var(--grey3);
 }
