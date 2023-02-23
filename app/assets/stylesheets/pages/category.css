@@ -96,7 +96,8 @@
 }
 
 .category-grid,
-.trans-grid {
+.trans-grid,
+.details-grid {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -109,7 +110,8 @@
 
 .icon-trans-name-date,
 .categ-icon-and-name,
-.total-categ-trans-icon-name {
+.total-categ-trans-icon-name,
+.icon-name-details {
   display: flex;
   align-items: center;
   gap: 10px;

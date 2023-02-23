@@ -1,17 +1,40 @@
-<div id="<%= dom_id my_transaction %>">
-  <p>
-    <strong>Name:</strong>
-    <%= my_transaction.name %>
-  </p>
+<div id="<%= dom_id my_transaction %>" class="details-wrapper">
 
-  <p>
-    <strong>Amount:</strong>
-    <%= my_transaction.amount %>
-  </p>
+  <div class="header header-categ-trans">
+    <%= link_to category_my_transactions_path(category_id: @category.id) do %>
+      <%= image_tag('back.svg', class: "svg") %>
+    <% end %>
+    <h1> Details </h1>
+  </div>
 
-  <p>
-    <strong>User:</strong>
-    <%= my_transaction.user_id %>
-  </p>
+  <div class="details-grid">
+  <div class="icon-name-details">
+    <div>
+      <% if @category.image %>
+      <%= image_tag @category.image_url, class:"categ-icon" %>
+      <% else %>
+        <%= image_tag('transport.png') %>
+      <% end %>
+    </div>
+    <p class="trans-name-text"><%= @my_transaction.name %></p>
+  </div>
+
+
+    <div class="trans-name-date">
+
+      <% if Time.now - @my_transaction.created_at <= 1.minute %>
+        <h4 class="trans-date-text"><%= time_ago_in_words(@my_transaction.created_at, include_seconds: true) %> ago</h4>
+      <% elsif Time.now - @my_transaction.created_at <= 24.hours %>
+        <h4 class="trans-date-text"><%= time_ago_in_words(@my_transaction.created_at) %> ago</h4>
+      <% else %>
+        <h4 class="trans-date-text"><%= @my_transaction.created_at.strftime('%b %d, %Y') %></h4>
+
+      <% end %>
+    </div>
+  </div>
+
+  <div class="trans-amount">
+    <h3>Total payment $<%= @my_transaction.amount %></h3>
+  </div>
 
 </div>

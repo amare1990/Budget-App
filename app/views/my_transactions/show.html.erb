@@ -4,8 +4,7 @@
 
 <div>
   <%= link_to "Edit this my transaction", edit_category_my_transaction_path(category_id: @category.id,
-  id: @my_transaction.id) %> |
-  <%= link_to "Back to my transactions", category_my_transactions_path(category_id: @category.id) %>
+  id: @my_transaction.id) %>
 
   <%= button_to "Destroy this my transaction", category_my_transaction_path(category_id: @category.id,
   id: @my_transaction.id),
