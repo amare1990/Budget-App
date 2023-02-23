@@ -1,17 +1,11 @@
 <div id="<%= dom_id category %>">
   <p>
-    <strong>Name:</strong>
     <%= category.name %>
   </p>
 
   <p>
-    <strong>Icon:</strong>
-    <%= image_tag category.image_url, class:"categ-icon" if category.image %>
-  </p>
 
-  <p>
-    <strong>User:</strong>
-    <%= category.user_id %>
+    <%= image_tag category.image_url, class:"categ-icon" if category.image %>
   </p>
 
 </div>
