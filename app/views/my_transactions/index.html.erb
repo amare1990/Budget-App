@@ -14,8 +14,8 @@
 
   <div class="total-categ-trans">
     <%= image_tag @category.image_url, class:"categ-icon" if @category.image %>
-    <h2><%= @category.name %></h2>
-    <h3> $<%= @category.my_transactions.sum(:amount) %> </h3>
+    <h2 class="trans-name-text"><%= @category.name %></h2>
+    <h3 class="trans-amount"> $<%= @category.my_transactions.sum(:amount) %> </h3>
   </div>
 
   <div class="trans-body">
@@ -36,20 +36,20 @@
                 </div>
 
                 <div class="trans-name-date">
-                  <h3><%= category_my_transaction.my_transaction.name %></h3>
+                  <p class="trans-name-text"><%= category_my_transaction.my_transaction.name %></p>
                   <% if Time.now - category_my_transaction.created_at <= 1.minute %>
-                    <p><%= time_ago_in_words(category_my_transaction.created_at, include_seconds: true) %> ago</p>
+                    <h4 class="trans-date-text"><%= time_ago_in_words(category_my_transaction.created_at, include_seconds: true) %> ago</h4>
                   <% elsif Time.now - category_my_transaction.created_at <= 24.hours %>
-                    <p><%= time_ago_in_words(category_my_transaction.created_at) %> ago</p>
+                    <h4 class="trans-date-text"><%= time_ago_in_words(category_my_transaction.created_at) %> ago</h4>
                   <% else %>
-                    <p><%= category_my_transaction.created_at.strftime('%b %d, %Y') %></p>
+                    <h4 class="trans-date-text"><%= category_my_transaction.created_at.strftime('%b %d, %Y') %></h4>
 
                   <% end %>
                 </div>
               </div>
 
               <div class="trans-amount">
-                <h3>$ <%= category_my_transaction.my_transaction.amount %></h3>
+                <h3>$<%= category_my_transaction.my_transaction.amount %></h3>
               </div>
 
             </div>
@@ -63,7 +63,9 @@
     <% end %>
   </div> <!---- End of trans-body div tag ---->
 
-  <%= link_to "Add transaction", new_category_my_transaction_path(category_id: @category.id) %>
+  <p class="new-trans">
+    <%= link_to "Add transaction", new_category_my_transaction_path(category_id: @category.id) %>
+  </p>
 </div>
 
 

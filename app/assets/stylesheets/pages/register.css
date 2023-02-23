@@ -55,11 +55,13 @@
 }
 
 .total-categ-trans {
-  margin: 10px;
+  margin: 10px 20px;
+  padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 30px;
+  border-radius: 5px;
 }
 
 .form-container {
