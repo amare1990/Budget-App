@@ -92,3 +92,6 @@ gem 'rails-controller-testing'
 
 # Add authorization library
 gem 'cancancan'
+
+# faker gem
+gem 'faker'
