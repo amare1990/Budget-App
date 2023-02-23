@@ -7,8 +7,6 @@
   justify-content: center;
   align-items: center;
   background-color: var(--grey3);
-
-  /*  gap: 30px; */
 }
 
 .new_user {
@@ -18,6 +16,7 @@
   align-items: center;
   gap: 30px;
   width: 100%;
+  padding-bottom: 20px;
 }
 
 .header-account {
@@ -55,12 +54,36 @@
   padding-bottom: 20px;
 }
 
+.upload-picture a {
+  color: var(--grey3);
+}
+
 .field {
   width: 100%;
   padding-left: 20px;
 }
 
-/* .field input {
-  border-top: 0.5px solid var(--grey1);
-  border-bottom: 0.5px solid var(--grey1);
-} */
+.field input {
+  width: inherit;
+}
+
+.field-remember-me {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.field-remember-me input {
+  width: unset;
+  margin-right: 10px;
+}
+
+.actions {
+  width: 100%;
+}
+
+.actions input {
+  background-color: var(--blue);
+  width: 100%;
+  color: var(--white);
+}

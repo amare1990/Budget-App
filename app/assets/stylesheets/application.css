@@ -31,6 +31,7 @@
   --grey: #f1f3f2;
   --grey2: #e8eae9;
   --grey3: #c7ccca;
+  --grey4: #b7bbba;
   --black: #262729;
   --dark: #434b54d2;
   --principalFont: 'Proxima Nova', sans-serif;
@@ -64,7 +65,6 @@ body {
 
 a {
   text-decoration: none;
-  color: var(--grey2);
 }
 
 input {
@@ -80,6 +80,6 @@ input:focus {
 }
 
 input::placeholder {
-  color: var(--grey3);
+  color: var(--grey4);
   letter-spacing: 0.6px;
 }

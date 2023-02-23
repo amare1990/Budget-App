@@ -1,5 +1,11 @@
 <div class="login-wrapper">
-  <h2>Log in</h2>
+  <div class="header-account header-login">
+    <div class="left-arrow-icon">
+      <%= image_tag('left-arrow.png') %>
+    </div>
+    <h2 class="register-texts register-title">LOGIN</h2>
+    <p class="register-texts"> Log In </p>
+  </div>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field">
@@ -11,7 +17,7 @@
     </div>
 
     <% if devise_mapping.rememberable? %>
-      <div class="field">
+      <div class="field field-remember-me">
         <%= f.check_box :remember_me %>
         <%= f.label :remember_me %>
       </div>
