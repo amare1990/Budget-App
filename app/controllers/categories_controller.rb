@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  load_and_authorize_resource
+  load_and_authorize_resource except: %i[create]
   before_action :set_category, only: %i[show edit update destroy]
   before_action :set_user
 
@@ -71,6 +71,6 @@ class CategoriesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def category_params
-    params.require(:category).permit(:name, :icon, :user_id)
+    params.require(:category).permit(:name, :user_id, :image)
   end
 end
