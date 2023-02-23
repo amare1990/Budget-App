@@ -1,13 +1,14 @@
 <div id="<%= dom_id category %>" class="category-grid">
 
-  <p>
+  <div class="categ-icon-and-name">
+    <p>
+      <%= image_tag category.image_url, class:"categ-icon" if category.image %>
+    </p>
 
-    <%= image_tag category.image_url, class:"categ-icon" if category.image %>
-  </p>
-
-  <p class="categ-name-text">
-    <%= category.name %>
-  </p>
+    <p class="categ-name-text">
+      <%= category.name %>
+    </p>
+  </div>
 
   <h3 class="categ-amount"> <%= category.my_transactions.sum(:amount) %> </h3>
 

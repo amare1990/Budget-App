@@ -13,8 +13,10 @@
   </div>
 
   <div class="total-categ-trans">
-    <%= image_tag @category.image_url, class:"categ-icon" if @category.image %>
-    <h2 class="trans-name-text"><%= @category.name %></h2>
+    <div class="total-categ-trans-icon-name">
+      <%= image_tag @category.image_url, class:"categ-icon" if @category.image %>
+      <h2 class="trans-name-text"> Total <%= @category.name %> transactions </h2>
+    </div>
     <h3 class="trans-amount"> $<%= @category.my_transactions.sum(:amount) %> </h3>
   </div>
 

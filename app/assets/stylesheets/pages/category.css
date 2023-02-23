@@ -40,6 +40,13 @@
   background-color: var(--grey3);
 }
 
+.trans-name-text,
+.categ-name-text,
+.trans-date-text {
+  max-width: auto;
+  height: auto;
+}
+
 .categ-body .categ-name-text,
 .categ-body .categ-amount,
 .trans-name-text,
@@ -100,7 +107,9 @@
   padding: 10px 10px;
 }
 
-.icon-trans-name-date {
+.icon-trans-name-date,
+.categ-icon-and-name,
+.total-categ-trans-icon-name {
   display: flex;
   align-items: center;
   gap: 10px;
