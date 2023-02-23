@@ -18,6 +18,7 @@
 @import 'pages/splash-screen.css';
 @import 'pages/register.css';
 @import 'pages/login.css';
+@import 'pages/category.css';
 
 :root {
   --red: #bd3b1b;
