@@ -1,4 +1,72 @@
+.categ-index {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: var(--grey3);
+
+}
+
+.header-categ-trans {
+  background-color: var(--blue);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  padding: 0 10px;
+}
+
+.header-categ-trans h1 {
+  color: var(--white);
+  background-color: var(--blue);
+}
+
 .categ-icon {
   width: 30px;
   height: 30px;
+}
+
+.categ-body {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  background-color: var(--grey3);
+}
+
+.categ-body .categ-name-text,
+.categ-body .categ-amount {
+  color: var(--grey4);
+}
+
+.new-categ {
+  background-color: var(--blue);
+  text-align: center;
+  color: var(--white);
+  margin-bottom: 20px;
+  height: 30px;
+}
+
+.new-categ a {
+  color: var(--white);
+  background-color: var(--blue);
+}
+
+#categories {
+  padding: 10px 20px;
+}
+
+.category-grid {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+
+.svg {
+  width: 1.1rem;
+  height: 1.1rem;
+  background-color: var(--blue);
+  display: flex;
 }

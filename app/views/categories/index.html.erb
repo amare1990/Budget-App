@@ -1,16 +1,26 @@
 <p style="color: green"><%= notice %></p>
 
 <div class="categ-index">
-  <h1>Categories</h1>
-
-  <div id="categories">
-    <% @categories.each do |category| %>
-      <%= render category %>
-      <p>
-        <%= link_to "Show this category", category_my_transactions_path(category_id: category.id) %>
-      </p>
-    <% end %>
+  <div class="header header-categ-trans">
+    <%= image_tag('back.svg', class: "svg") %>
+    <h1>Categories</h1>
+    <%= image_tag('search.svg', class: "svg") %>
   </div>
 
-  <%= link_to "Add new category", new_category_path %>
+
+ <div class="categ-body">
+  <div id="categories">
+  <% @categories.each do |category| %>
+    <a href=<%= category_my_transactions_path(category_id: category.id) %>>
+
+    <%= render category %>
+
+    </a>
+
+  <% end %>
+  </div>
+  <p class="new-categ">
+    <%= link_to "Add new category",  new_category_path %>
+  </p>
+ </div>
 </div>
