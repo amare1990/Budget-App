@@ -19,6 +19,10 @@
   padding-bottom: 20px;
 }
 
+.header-wider {
+  background-color: var(--blue);
+}
+
 .header-account {
   background-color: var(--blue);
   width: 100%;
@@ -40,6 +44,22 @@
 .register-texts {
   color: var(--white);
   background-color: var(--blue);
+}
+
+.most-recent-text {
+  background-color: var(--blue);
+  color: var(--white);
+  text-align: center;
+  padding-bottom: 10px;
+  font-size: 20px;
+}
+
+.total-categ-trans {
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
 }
 
 .form-container {
