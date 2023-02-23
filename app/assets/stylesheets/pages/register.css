@@ -1,9 +1,12 @@
+@import '../application.css';
+
 .register-wrapper,
 .login-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: var(--grey3);
 
   /*  gap: 30px; */
 }
@@ -14,4 +17,50 @@
   justify-content: center;
   align-items: center;
   gap: 30px;
+  width: 100%;
 }
+
+.header-account {
+  background-color: var(--blue);
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.left-arrow-icon img {
+  width: 20px;
+  height: 20px;
+  background-color: var(--blue);
+}
+
+.register-texts {
+  color: var(--white);
+  background-color: var(--blue);
+}
+
+.form-container {
+  width: 100%;
+  background-color: var(--white);
+}
+
+.upload-picture {
+  display: flex;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.field {
+  width: 100%;
+  padding-left: 20px;
+}
+
+/* .field input {
+  border-top: 0.5px solid var(--grey1);
+  border-bottom: 0.5px solid var(--grey1);
+} */
