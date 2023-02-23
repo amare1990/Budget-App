@@ -1,9 +1,8 @@
-<h1>New my transaction</h1>
+<div class="header header-categ-trans">
+  <%= link_to category_my_transactions_path(category_id: @category.id) do %>
+    <%= image_tag('back.svg', class: "svg") %>
+  <% end %>
+  <h1>Add transaction </h1>
+</div>
 
 <%= render "form_new", my_transaction: @my_transaction %>
-
-<br>
-
-<div>
-  <%= link_to "Back to my transactions", category_my_transactions_path(category_id: @category.id) %>
-</div>

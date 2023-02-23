@@ -80,4 +80,5 @@ input:focus {
 
 input::placeholder {
   color: var(--grey4);
+  font-size: 16px;
 }

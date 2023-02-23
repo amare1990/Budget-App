@@ -134,7 +134,8 @@
 }
 
 /* Add new category */
-.form-add-categ {
+.form-add-categ,
+.form-add-trans {
   margin-top: 20px;
   background-color: var(--white
   )
