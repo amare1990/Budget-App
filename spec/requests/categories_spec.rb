@@ -4,10 +4,10 @@ RSpec.describe 'Categories', type: :request do
   subject do
     @user = User.create!(name: 'fname m. lname', email: 'user1@budgetapp.com', password: 'password1')
     @categ = Category.create!(name: 'category1', image_data: @icon_file, user: @user)
-    @user.skip_confirmation!
-    @user.confirm
-    @user.save
-    sign_in @user
+    # @user.skip_confirmation!
+    # @user.confirm
+    # @user.save
+    # sign_in @user
   end
 
   before(:each) do
