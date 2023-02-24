@@ -12,7 +12,7 @@ class MyTransactionsController < ApplicationController
   def index
     # authorize! :manage, @category
     # @my_transactions = MyTransaction.all
-    @my_transactions = @category.my_transactions
+    @my_transactions = @category.my_transactions.order(created_at: :desc)
     @category_my_transactions = @category.category_my_transactions
   end
 

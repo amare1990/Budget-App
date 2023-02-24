@@ -65,6 +65,8 @@
     <% end %>
   </div> <!---- End of trans-body div tag ---->
 
+  <%= button_to "Destroy this category", @category, method: :delete %>
+
   <p class="new-trans">
     <%= link_to "Add transaction", new_category_my_transaction_path(category_id: @category.id) %>
   </p>

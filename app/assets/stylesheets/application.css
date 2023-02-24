@@ -21,7 +21,8 @@
 @import 'pages/category.css';
 
 :root {
-  --blue: #3778c2;
+  --blue: #5b7696;
+  --blue2: #2777c2;
   --white: #fff;
   --grey2: #e8eae9;
   --grey3: #c7ccca;
