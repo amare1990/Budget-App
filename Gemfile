@@ -58,6 +58,7 @@ group :development, :test do
   # The following gems aids with the nuts and bolts
   # of interacting with the browser.
   gem 'webdrivers'
+  gem 'bullet'
 end
 
 group :development do
@@ -85,7 +86,7 @@ gem 'devise'
 gem 'letter_opener', group: :development
 
 # controllers/requests testing tool required
-gem 'bullet', group: 'development'
+# gem 'bullet', group: 'development'
 
 # Usefull for controller testing
 gem 'rails-controller-testing'
