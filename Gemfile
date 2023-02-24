@@ -57,8 +57,8 @@ group :development, :test do
 
   # The following gems aids with the nuts and bolts
   # of interacting with the browser.
-  gem 'webdrivers'
   gem 'bullet'
+  gem 'webdrivers'
 end
 
 group :development do
@@ -76,8 +76,8 @@ end
 gem 'rubocop', '>= 1.0', '< 2.0'
 
 # icon adding
-gem 'shrine', '~> 3.3'
 gem 'image_processing', '~> 1.12', '>= 1.12.1'
+gem 'shrine', '~> 3.3'
 
 # Devise gem
 gem 'devise'

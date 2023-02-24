@@ -14,7 +14,6 @@ class User < ApplicationRecord
   end
 
   def total_expenditure
-    total = my_transactions.sum(:amount)
-    total
+    my_transactions.sum(:amount)
   end
 end

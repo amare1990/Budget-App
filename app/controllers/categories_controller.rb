@@ -2,11 +2,11 @@ class CategoriesController < ApplicationController
   load_and_authorize_resource except: %i[create]
   before_action :set_category, only: %i[show edit update destroy]
   before_action :set_user
-n
+
   def index
     @categories = @user.categories.all
   end
-n
+
   def show; end
 
   def new
