@@ -145,6 +145,7 @@ You can deploy this project using:
 - [ ] **Add animations**
 - [ ] **Refactor to desktop version**
 - [ ] **Update the API and its documentation**
+- [ ] **Add payment integration**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
