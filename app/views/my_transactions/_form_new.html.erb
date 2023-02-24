@@ -25,6 +25,16 @@ class:"form-add-trans") do |form| %>
     <%= form.text_field :user_id %>
   </div> --->
 
+  <%  @categories.each do |item|%>
+    <%p params[:category_id].to_i%>
+      <% if item.id == params[:category_id].to_i%>
+        <%= check_box_tag "params[:my_transaction][:category_ids][]", item.id, true%>
+      <%else%>
+        <%= check_box_tag "params[:my_transaction][:category_ids][]", item.id%>
+      <%end%>
+      <%= item.name%><br>
+    <%end%>
+
   <div class="add-trans">
     <%= form.submit %>
   </div>

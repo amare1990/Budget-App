@@ -6,6 +6,7 @@ class MyTransactionsController < ApplicationController
   before_action :set_user
   before_action :set_category
   before_action :set_category_my_transaction
+  before_action :set_categories
 
   # GET /my_transactions or /my_transactions.json
   def index
@@ -30,6 +31,7 @@ class MyTransactionsController < ApplicationController
   def create
     @my_transaction = MyTransaction.new(my_transaction_params)
     @my_transaction.user = @user
+    @my_transaction.category_ids = params[:my_transaction][:category_ids]
 
     respond_to do |format|
       if @my_transaction.save
@@ -94,12 +96,16 @@ class MyTransactionsController < ApplicationController
     @category = Category.find(params[:category_id])
   end
 
+  def set_categories
+    @categories = @user.categories
+  end
+
   def set_category_my_transaction
     @category_my_transaction = CategoryMyTransaction.where(category_id: params[:category_id]).order(created_at: :desc)
   end
 
   # Only allow a list of trusted parameters through.
   def my_transaction_params
-    params.require(:my_transaction).permit(:name, :amount, :user_id)
+    params.require(:my_transaction).permit(:name, :amount, :category_ids, :user_id)
   end
 end
