@@ -2,7 +2,9 @@
 
 <div class="categ-index">
   <div class="header header-categ-trans">
-    <%= image_tag('back.svg', class: "svg") %>
+    <%= link_to destroy_user_session_path do %>
+      <%= image_tag('sign-out.png', class: "icon-signout") %>
+    <% end %>
     <h1>Categories</h1>
     <%= image_tag('search.svg', class: "svg") %>
   </div>

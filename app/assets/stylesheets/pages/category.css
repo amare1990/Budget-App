@@ -14,6 +14,11 @@
   padding: 0 10px;
 }
 
+.icon-signout {
+  width: 30px;
+  height: 30px;
+}
+
 .header-categ-trans h1,
 .add-categ-title {
   color: var(--white);
