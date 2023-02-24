@@ -238,3 +238,21 @@
   background-color: var(--blue2);
 
 }
+
+.show-categ-links {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+
+.show-categ-links p,
+.show-categ-links .btn-dest-categ  {
+  background-color: var(--blue);
+  color: var(--white);
+  padding: 5px 0;
+  font-size: 14px;
+}
+
+.show-categ-links .btn-dest-categ {
+  width: 100%;
+}
