@@ -211,6 +211,7 @@
   font-size: 20px;
   color: var(--white);
   background-color: var(--blue);
+  cursor: pointer;
 }
 
 .details-body-container {
