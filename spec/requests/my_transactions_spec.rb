@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'My Transactions', type: :request do
   before(:each) do
     @user = User.create!(name: 'fname3 M2. Lname2', email: 'user3@budgetapp.com', password: 'password3', id: 1)
-    @categ = Category.create!(name: 'category3', icon: 'third categ', user: @user, id: 1)
+    @categ = Category.create!(name: 'category3', image_data: @image, user: @user, id: 1)
     @transaction = MyTransaction.create!(name: 'house rent3', amount: 400, id: 1, user: @user)
     # @transaction2 = MyTransaction.create!(name: "Firfir", amount: 3, user: @user)
 
@@ -13,8 +13,7 @@ RSpec.describe 'My Transactions', type: :request do
   end
 
   before do
-    @icon_file = fixture_file_upload(Rails.root.join('spec', 'fixtures', 'files', 'test.png'), 'image/png')
-    subject
+    @image = fixture_file_upload(Rails.root.join('spec', 'fixtures', 'files', 'test.png'), 'image/png')
   end
 
   describe 'GET /index' do

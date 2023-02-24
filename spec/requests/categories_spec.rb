@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Categories', type: :request do
   before(:each) do
     @user = User.create!(name: 'fname m. lname', email: 'user1@budgetapp.com', password: 'password1')
-    @categ = Category.create!(name: 'category1', image_data: @icon_file, user: @user)
+    @categ = Category.create!(name: 'category1', image_data: @image, user: @user)
     # @user.skip_confirmation!
     # @user.confirm
     # @user.save
@@ -11,7 +11,7 @@ RSpec.describe 'Categories', type: :request do
   end
 
   before do
-    @icon_file = fixture_file_upload('test.png')
+    @image = fixture_file_upload('test.png')
   end
 
   describe 'GET /index' do
