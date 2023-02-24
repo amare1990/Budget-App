@@ -21,20 +21,12 @@
 @import 'pages/category.css';
 
 :root {
-  --red: #bd3b1b;
-  --red2: #d9370fdb;
   --blue: #3778c2;
-  --blue2: #008cba;
-  --green: #5fb523;
-  --orange: #d8a800;
   --white: #fff;
-  --grey: #f1f3f2;
   --grey2: #e8eae9;
   --grey3: #c7ccca;
   --grey4: #b7bbba;
   --black: #262729;
-  --dark: #434b54d2;
-  --principalFont: 'Proxima Nova', sans-serif;
 }
 
 * {
@@ -50,6 +42,7 @@ html {
 }
 
 body {
+  font-family: 'Proxima Nova', Georgia, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;

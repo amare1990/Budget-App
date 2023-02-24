@@ -129,7 +129,8 @@
   border-bottom: 1px solid var(--grey);
 }
 
-.svg {
+.icon-search,
+.icon-back {
   width: 1.1rem;
   height: 1.1rem;
   background-color: var(--blue);
@@ -194,7 +195,8 @@
   height: 30px;
 }
 
-.details-delete-btn {
+.details-delete-btn,
+.logout-btn {
   border: none;
   outline: none;
 }
@@ -203,6 +205,12 @@
 .details-delete-btn {
   color: var(--grey4);
   font-size: 16px;
+}
+
+.logout-btn {
+  font-size: 20px;
+  color: var(--white);
+  background-color: var(--blue);
 }
 
 .details-body-container {
