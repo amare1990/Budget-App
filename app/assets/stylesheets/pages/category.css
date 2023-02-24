@@ -96,8 +96,7 @@
 }
 
 .category-grid,
-.trans-grid,
-.details-grid {
+.trans-grid {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -122,6 +121,7 @@
   flex-direction: column;
   width: auto;
   height: auto;
+  border-bottom: 1px solid var(--grey);
 }
 
 .svg {
@@ -149,4 +149,63 @@
 
 .categ-add-wrapper {
   background-color: var(--grey3);
+}
+
+/* Transaction Details */
+.details-wrapper {
+  background-color: var(--grey3);
+  height: 100%;
+}
+
+.details-body {
+  height: auto;
+  width: auto;
+  max-width: 767.98px;
+}
+
+.details-grid {
+  background-color: var(--white);
+  margin: 20px 20px;
+  padding: 10px 10px;
+}
+
+.details-header-body {
+  border-bottom: 1px solid var(--grey);
+  background-color: var(--white);
+}
+
+.details-header-body,
+.trans-name-date,
+.details-trans-amount {
+  padding: 10px 0;
+}
+
+.details-links {
+  margin: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  height: 30px;
+}
+
+.details-delete-btn {
+  border: none;
+  outline: none;
+}
+
+.details-edit-link,
+.details-delete-btn {
+  color: var(--grey4);
+  font-size: 16px;
+}
+
+.details-body-container {
+  background-color: var(--grey3);
+}
+
+.header-trans-details {
+  display: flex;
+  justify-content: flex-start;
+  gap: 136px;
 }

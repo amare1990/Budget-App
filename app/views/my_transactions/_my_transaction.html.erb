@@ -1,26 +1,31 @@
-<div id="<%= dom_id my_transaction %>" class="details-wrapper">
+<div id="<%= dom_id my_transaction %>" class="details-body-container">
 
-  <div class="header header-categ-trans">
+  <div class="header header-categ-trans header-trans-details">
     <%= link_to category_my_transactions_path(category_id: @category.id) do %>
       <%= image_tag('back.svg', class: "svg") %>
     <% end %>
-    <h1> Details </h1>
+    <h1 class="details-title"> Details </h1>
   </div>
 
   <div class="details-grid">
-  <div class="icon-name-details">
-    <div>
-      <% if @category.image %>
-      <%= image_tag @category.image_url, class:"categ-icon" %>
-      <% else %>
-        <%= image_tag('transport.png') %>
-      <% end %>
+    <div class="details-header-body">
+      <div class="icon-name-details">
+        <div>
+          <% if @category.image %>
+          <%= image_tag @category.image_url, class:"categ-icon" %>
+          <% else %>
+            <%= image_tag('transport.png') %>
+          <% end %>
+        </div>
+        <p class="trans-name-text"><%= @my_transaction.name %></p>
+      </div>
+      <p class="details-body">
+        <%= Faker::Lorem.paragraph_by_chars(number: 100, supplemental: false) %>
+      </p>
     </div>
-    <p class="trans-name-text"><%= @my_transaction.name %></p>
-  </div>
-
 
     <div class="trans-name-date">
+      <p> Transaction took place </p>
 
       <% if Time.now - @my_transaction.created_at <= 1.minute %>
         <h4 class="trans-date-text"><%= time_ago_in_words(@my_transaction.created_at, include_seconds: true) %> ago</h4>
@@ -31,10 +36,13 @@
 
       <% end %>
     </div>
+
+    <div class="trans-amount">
+      <h3>Total payment $<%= @my_transaction.amount %></h3>
+    </div>
+
   </div>
 
-  <div class="trans-amount">
-    <h3>Total payment $<%= @my_transaction.amount %></h3>
-  </div>
+
 
 </div>
