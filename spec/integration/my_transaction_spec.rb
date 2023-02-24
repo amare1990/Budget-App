@@ -2,10 +2,9 @@ require 'rails_helper'
 
 RSpec.describe 'My Transaction Page', type: :system do
   describe 'my_transactions#index' do
-    before :each do
+    before(:each) do
       @user = User.create!(name: 'kefie G. Sim', email: 'kefie@budgetapp.com', password: '0913850328')
-      @icon_file = fixture_file_upload(Rails.root.join('spec', 'fixtures', 'files', 'test.png'), 'image/png')
-      @categ = Category.create(name: 'Transport', icon: @icon_file, user_id: @user.id)
+      @categ = Category.create!(name: 'Transport', image_data: @image_file, user_id: @user.id)
       @my_transaction = MyTransaction.create(name: 'plane trip', amount: 5000)
       @user.skip_confirmation!
       @user.save!
@@ -15,6 +14,10 @@ RSpec.describe 'My Transaction Page', type: :system do
       click_button 'Log in'
       sleep(2)
       visit category_my_transactions_path(category_id: @categ.id)
+    end
+
+    before do
+      @image_file = fixture_file_upload('test.png', 'image/png')
     end
 
     it 'should display the name of the category' do
@@ -29,12 +32,12 @@ RSpec.describe 'My Transaction Page', type: :system do
       expect(page).to have_content('My transactions')
     end
 
-    it "should display a button with text 'Add new transaction'" do
-      expect(page).to have_content('Add new transaction')
+    it "should display a button with text 'Add transaction'" do
+      expect(page).to have_content('Add transaction')
     end
 
     it "should redirect to a page to add new transaction when the 'Add new transaction button' is clicked" do
-      click_link 'Add new transaction'
+      click_link 'Add transaction'
       expect(page).to have_current_path new_category_my_transaction_path(category_id: @categ.id)
     end
   end

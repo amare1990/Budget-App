@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Splash Screen Page', type: :system do
   describe 'SplashScreen /show' do
-    before :each do
+    before(:each) do
       visit root_path
     end
 

@@ -2,10 +2,9 @@ require 'rails_helper'
 
 RSpec.describe 'Category Page', type: :system do
   describe 'category#index' do
-    before :each do
+    before(:each) do
       @user = User.create!(name: 'kefie g. Sim', email: 'kefie@budgetapp.com', password: '0913850328')
-      @icon_file = fixture_file_upload(Rails.root.join('spec', 'fixtures', 'files', 'test.png'), 'image/png')
-      @categ = Category.create(name: 'Transport', icon: @icon_file, user_id: @user.id)
+      @categ = Category.create!(name: 'Transport', image_data: @image_file, user_id: @user.id)
       @user.skip_confirmation!
       @user.save!
       visit new_user_session_path
@@ -14,6 +13,10 @@ RSpec.describe 'Category Page', type: :system do
       click_button 'Log in'
       sleep(2)
       visit categories_path
+    end
+
+    before do
+      @image_file = fixture_file_upload('test.png')
     end
 
     it 'should display the name of the category' do
@@ -33,8 +36,8 @@ RSpec.describe 'Category Page', type: :system do
       expect(page).to have_current_path(new_category_path)
     end
 
-    it 'should display buttons with text Detail' do
-      expect(page).to have_content('Detail')
+    it 'should display buttons with Logout' do
+      expect(page).to have_content('Logout')
     end
   end
 end
