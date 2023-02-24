@@ -2,24 +2,19 @@ class CategoriesController < ApplicationController
   load_and_authorize_resource except: %i[create]
   before_action :set_category, only: %i[show edit update destroy]
   before_action :set_user
-
-  # GET /categories or /categories.json
+n
   def index
     @categories = @user.categories.all
   end
-
-  # GET /categories/1 or /categories/1.json
+n
   def show; end
 
-  # GET /categories/new
   def new
     @category = Category.new
   end
 
-  # GET /categories/1/edit
   def edit; end
 
-  # POST /categories or /categories.json
   def create
     @category = Category.new(category_params)
     @category.user = @user
@@ -44,7 +39,6 @@ class CategoriesController < ApplicationController
     end
   end
 
-  # DELETE /categories/1 or /categories/1.json
   def destroy
     @category.destroy
 

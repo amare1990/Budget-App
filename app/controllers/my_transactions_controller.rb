@@ -8,30 +8,22 @@ class MyTransactionsController < ApplicationController
   before_action :set_category_my_transaction
   before_action :set_categories
 
-  # GET /my_transactions or /my_transactions.json
   def index
-    # authorize! :manage, @category
-    # @my_transactions = MyTransaction.all
     @my_transactions = @category.my_transactions.order(created_at: :desc)
     @category_my_transactions = @category.category_my_transactions
   end
 
-  # GET /my_transactions/1 or /my_transactions/1.json
   def show; end
 
-  # GET /my_transactions/new
   def new
     @my_transaction = MyTransaction.new
   end
 
-  # GET /my_transactions/1/edit
   def edit; end
 
-  # POST /my_transactions or /my_transactions.json
   def create
     @my_transaction = MyTransaction.new(my_transaction_params)
     @my_transaction.user = @user
-    @my_transaction.category_ids = params[:my_transaction][:category_ids]
 
     respond_to do |format|
       if @my_transaction.save
@@ -40,15 +32,12 @@ class MyTransactionsController < ApplicationController
           redirect_to category_my_transactions_url(category_id: @category.id),
                       notice: 'My transaction was successfully created.'
         end
-        format.json { render :show, status: :created, location: @my_transaction }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @my_transaction.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # PATCH/PUT /my_transactions/1 or /my_transactions/1.json
   def update
     respond_to do |format|
       if @my_transaction.update(my_transaction_params)
@@ -56,17 +45,13 @@ class MyTransactionsController < ApplicationController
           redirect_to category_my_transactions_url(category_id: @category.id, id: @my_transaction.id),
                       notice: 'My transaction was successfully updated.'
         end
-        format.json { render :show, status: :ok, location: @my_transaction }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @my_transaction.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /my_transactions/1 or /my_transactions/1.json
   def destroy
-    # @category_my_transaction.destroy
     @category_my_transactions = CategoryMyTransaction.where(category_id: @category.id,
                                                             my_transaction_id: @my_transaction.id)
 
@@ -77,7 +62,6 @@ class MyTransactionsController < ApplicationController
         redirect_to category_my_transactions_url(category_id: @category.id),
                     notice: 'My transaction was successfully destroyed.'
       end
-      format.json { head :no_content }
     end
   end
 
