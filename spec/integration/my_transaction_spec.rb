@@ -5,9 +5,9 @@ RSpec.describe 'My Transaction Page', type: :system do
     before(:each) do
       @user = User.create!(name: 'kefie G. Sim', email: 'kefie@budgetapp.com', password: '0913850328')
       @categ = Category.create!(name: 'Transport', image_data: @image_file, user_id: @user.id)
-      @my_transaction = MyTransaction.create(name: 'plane trip', amount: 5000)
-      @user.skip_confirmation!
-      @user.save!
+      @my_transaction = MyTransaction.create!(name: 'plane trip', amount: 5000, user_id: @user.id)
+      CategoryMyTransaction.create!(category_id: @categ.id, my_transaction_id: @my_transaction.id)
+
       visit new_user_session_path
       fill_in 'user_email', with: 'kefie@budgetapp.com'
       fill_in 'user_password', with: '0913850328'

@@ -5,8 +5,7 @@ RSpec.describe 'Category Page', type: :system do
     before(:each) do
       @user = User.create!(name: 'kefie g. Sim', email: 'kefie@budgetapp.com', password: '0913850328')
       @categ = Category.create!(name: 'Transport', image_data: @image_file, user_id: @user.id)
-      @user.skip_confirmation!
-      @user.save!
+
       visit new_user_session_path
       fill_in 'user_email', with: 'kefie@budgetapp.com'
       fill_in 'user_password', with: '0913850328'
