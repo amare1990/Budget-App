@@ -69,8 +69,6 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [video Demo](https://loom.com/share/c91c330b800d41b89d88e5d84b86cf5e)
-
 - [Live Demo Link](https://budgetapp-amare.onrender.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
