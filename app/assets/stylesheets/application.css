@@ -1,0 +1,77 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import url('https://fonts.cdnfonts.com/css/proxima-nova-2');
+@import 'pages/splash-screen.css';
+@import 'pages/accounts.css';
+@import 'pages/category-trans.css';
+
+:root {
+  --blue2: #5b7696;
+  --blue: #2777c2;
+  --white: #fff;
+  --grey2: #e8eae9;
+  --grey3: #c7ccca;
+  --grey4: #6f7472;
+  --black: #262729;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--white);
+}
+
+html {
+  overflow-y: scroll;
+  height: 100%;
+}
+
+body {
+  font-family: 'Proxima Nova', Georgia, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--grey2);
+}
+
+.wrapper {
+  min-width: 375px;
+  max-width: 767.98px;
+  height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid var(--grey);
+  padding: 20px;
+  border-radius: 5px;
+}
+
+input:focus {
+  border: 2px solid var(--blue);
+}
+
+input::placeholder {
+  color: var(--grey4);
+  font-size: 16px;
+}

@@ -1,0 +1,111 @@
+@import '../application.css';
+
+.register-wrapper,
+.login-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--grey3);
+}
+
+.new_user {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+.header-wider {
+  background-color: var(--blue);
+}
+
+.header-account {
+  background-color: var(--blue);
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.left-arrow-icon img {
+  width: 20px;
+  height: 20px;
+  background-color: var(--blue);
+}
+
+.register-texts {
+  color: var(--white);
+  background-color: var(--blue);
+}
+
+.most-recent-text {
+  background-color: var(--blue);
+  color: var(--white);
+  text-align: center;
+  padding-bottom: 10px;
+  font-size: 20px;
+}
+
+.total-categ-trans {
+  margin: 10px 20px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+  border-radius: 5px;
+}
+
+.form-container {
+  width: 100%;
+  background-color: var(--white);
+}
+
+.upload-picture {
+  display: flex;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.upload-picture a {
+  color: var(--grey3);
+}
+
+.field {
+  width: 100%;
+  padding-left: 20px;
+}
+
+.field input {
+  width: inherit;
+}
+
+.field-remember-me {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.field-remember-me input {
+  width: unset;
+  margin-right: 10px;
+}
+
+.actions {
+  width: 100%;
+}
+
+.actions input {
+  background-color: var(--blue);
+  width: 100%;
+  color: var(--white);
+}

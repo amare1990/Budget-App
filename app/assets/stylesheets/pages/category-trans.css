@@ -1,0 +1,256 @@
+.categ-index {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: var(--grey3);
+}
+
+.header-categ-trans {
+  background-color: var(--blue);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 90px;
+  padding: 0 10px;
+}
+
+.icon-signout {
+  width: 30px;
+  height: 30px;
+}
+
+.header-categ-trans h1,
+.add-categ-title {
+  color: var(--white);
+  background-color: var(--blue);
+}
+
+.add-categ-title {
+  margin-bottom: 36px;
+  text-align: center;
+}
+
+.categ-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.categ-body,
+.trans-body {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  background-color: var(--grey3);
+}
+
+.trans-name-text,
+.categ-name-text,
+.trans-date-text {
+  width: auto;
+  height: auto;
+}
+
+.categ-body .categ-name-text,
+.categ-body .categ-amount,
+.trans-name-text,
+.trans-amount,
+.trans-date-text {
+  color: var(--grey4);
+}
+
+.trans-date-text {
+  font-size: 14px;
+}
+
+.trans-amount {
+  font-weight: 900;
+  color: var(--black);
+}
+
+.new-categ,
+.new-trans,
+.add-trans input {
+  background-color: var(--blue);
+  text-align: center;
+  color: var(--white);
+  margin-bottom: 20px;
+  height: 30px;
+}
+
+.add-trans input {
+  width: 100%;
+  text-align: center;
+}
+
+.add-trans {
+  margin-top: 20px;
+}
+
+.new-categ a,
+.new-trans a {
+  color: var(--white);
+  background-color: var(--blue);
+}
+
+#categories,
+#my_transactions {
+  padding: 10px 20px;
+  background-color: var(--grey3);
+}
+
+.category-grid,
+.trans-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 10px;
+  height: 50px;
+  border-radius: 5px;
+  padding: 10px 10px;
+}
+
+.icon-trans-name-date,
+.categ-icon-and-name,
+.total-categ-trans-icon-name,
+.icon-name-details {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.trans-name-date {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  height: auto;
+  border-bottom: 1px solid var(--grey);
+}
+
+.icon-search,
+.icon-back {
+  width: 1.1rem;
+  height: 1.1rem;
+  background-color: var(--blue);
+  display: flex;
+}
+
+.field-image {
+  margin: 5px 0;
+}
+
+/* Add new category */
+.form-add-categ,
+.form-add-trans {
+  margin-top: 20px;
+  background-color: var(--white);
+}
+
+.add-new-wrapper {
+  background-color: var(--grey3);
+}
+
+.categ-add-wrapper {
+  background-color: var(--grey3);
+}
+
+/* Transaction Details */
+.details-wrapper {
+  background-color: var(--grey3);
+  height: 100%;
+}
+
+.details-body {
+  height: auto;
+  width: auto;
+  max-width: 767.98px;
+}
+
+.details-grid {
+  background-color: var(--white);
+  margin: 20px 20px;
+  padding: 10px 10px;
+}
+
+.details-header-body {
+  border-bottom: 1px solid var(--grey);
+  background-color: var(--white);
+}
+
+.details-header-body,
+.trans-name-date,
+.details-trans-amount {
+  padding: 10px 0;
+}
+
+.details-links {
+  margin: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  height: 30px;
+}
+
+.details-delete-btn,
+.logout-btn {
+  border: none;
+  outline: none;
+}
+
+.details-edit-link,
+.details-delete-btn {
+  color: var(--grey4);
+  font-size: 16px;
+}
+
+.logout-btn {
+  font-size: 20px;
+  color: var(--white);
+  background-color: var(--blue);
+  cursor: pointer;
+}
+
+.details-body-container {
+  background-color: var(--grey3);
+}
+
+.header-trans-details {
+  display: flex;
+  justify-content: flex-start;
+  gap: 136px;
+}
+
+.total-expenditure {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--blue2);
+  padding: 10px 20px;
+}
+
+.total-expenditure h4,
+.total-expenditure p {
+  color: var(--white);
+  background-color: var(--blue2);
+}
+
+.show-categ-links {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+
+.show-categ-links p,
+.show-categ-links .btn-dest-categ {
+  background-color: var(--blue);
+  color: var(--white);
+  padding: 5px 0;
+  font-size: 14px;
+}
+
+.show-categ-links .btn-dest-categ {
+  width: 100%;
+}

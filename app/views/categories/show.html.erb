@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+<div class="header header-categ-trans header-trans-details">
+    <%= link_to categories_path do %>
+      <%= image_tag('back.svg', class: "icon-back") %>
+    <% end %>
+    <h1 class="details-title"> Details </h1>
+  </div>
+
+<%= render @category %>
+
+<div>
+  <%= link_to "Edit this category", edit_category_path(@category) %> |
+  <%= link_to "Back to categories", categories_path %>
+
+  <%= button_to "Destroy this category", @category, method: :delete %>
+</div>

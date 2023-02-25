@@ -1,0 +1,41 @@
+<%= form_with(model: my_transaction,
+url: category_my_transactions_path(category_id: @category.id),
+class:"form-add-trans") do |form| %>
+  <% if my_transaction.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(my_transaction.errors.count, "error") %> prohibited this my_transaction from being saved:</h2>
+
+      <ul>
+        <% my_transaction.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.text_field :name, autocomplete: true, autofocus: true, placeholder: "Transaction name" %>
+  </div>
+
+  <div class="field">
+    <%= form.text_field :amount, autocomplete: true, autofocus: true, placeholder: "Amount" %>
+  </div>
+  <!---
+  <div>
+    <%= form.text_field :user_id %>
+  </div> --->
+
+  <!--- <%  @categories.each do |item|%>
+    <%p params[:category_id].to_i%>
+      <% if item.id == params[:category_id].to_i%>
+        <%= check_box_tag "params[:my_transaction][:category_ids][]", item.id, true%>
+      <%else%>
+        <%= check_box_tag "params[:my_transaction][:category_ids][]", item.id%>
+      <%end%>
+      <%= item.name%><br>
+    <%end%>   --->
+
+  <div class="add-trans">
+    <%= form.submit %>
+  </div>
+<% end %>

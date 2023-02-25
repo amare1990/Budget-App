@@ -1,0 +1,8 @@
+<div class="header header-categ-trans">
+  <%= link_to category_my_transactions_path(category_id: @category.id) do %>
+    <%= image_tag('back.svg', class: "icon-back") %>
+  <% end %>
+  <h1>Add transaction </h1>
+</div>
+
+<%= render "form_new", my_transaction: @my_transaction %>

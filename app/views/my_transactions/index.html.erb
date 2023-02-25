@@ -1,0 +1,82 @@
+<p style="color: green"><%= notice %></p>
+<div class="categ-index">
+  <div class="header-wider">
+
+    <div class="header header-categ-trans">
+      <%= link_to categories_path do %>
+        <%= image_tag('back.svg', class: "icon-back") %>
+      <% end %>
+      <h1>My transactions</h1>
+      <%= image_tag('search.svg', class: "icon-search") %>
+    </div>
+    <h2 class="most-recent-text"> Most recent </h2>
+  </div>
+
+  <div class="total-categ-trans">
+    <div class="total-categ-trans-icon-name">
+      <%= image_tag @category.image_url, class:"categ-icon" if @category.image %>
+      <h2 class="trans-name-text"> Total <%= @category.name %> transactions </h2>
+    </div>
+    <h3 class="trans-amount"> $<%= @category.my_transactions.sum(:amount) %> </h3>
+  </div>
+
+  <div class="trans-body">
+    <% if @my_transactions.any? %>
+      <div id="my_transactions">
+
+        <% @category_my_transactions.includes(:my_transaction).each_with_index do |category_my_transaction, index| %>
+          <a href=<%= category_my_transaction_path(category_id: @category.id,
+          id: category_my_transaction.my_transaction_id) %> class="trans-grid-link">
+            <div class="trans-grid">
+              <div class="icon-trans-name-date">
+                <div>
+                  <% if @category.image %>
+                  <%= image_tag @category.image_url, class:"categ-icon" %>
+                  <% else %>
+                    <%= image_tag('transport.png') %>
+                  <% end %>
+                </div>
+
+                <div class="trans-name-date">
+                  <p class="trans-name-text"><%= category_my_transaction.my_transaction.name %></p>
+                  <% if Time.now - category_my_transaction.created_at <= 1.minute %>
+                    <h4 class="trans-date-text"><%= time_ago_in_words(category_my_transaction.created_at, include_seconds: true) %> ago</h4>
+                  <% elsif Time.now - category_my_transaction.created_at <= 24.hours %>
+                    <h4 class="trans-date-text"><%= time_ago_in_words(category_my_transaction.created_at) %> ago</h4>
+                  <% else %>
+                    <h4 class="trans-date-text"><%= category_my_transaction.created_at.strftime('%b %d, %Y') %></h4>
+
+                  <% end %>
+                </div>
+              </div>
+
+              <div class="trans-amount">
+                <h3>$<%= category_my_transaction.my_transaction.amount %></h3>
+              </div>
+
+            </div>
+
+          </a>
+
+        <% end %>
+      </div>
+    <% else %>
+      <p class="notice">No transaction  for the <%= @category.name %> category</p>
+    <% end %>
+
+  </div> <!---- End of trans-body div tag ---->
+
+  <div class="new-trans show-categ-links">
+  <p>
+    <%= link_to "Add transaction", new_category_my_transaction_path(category_id: @category.id) %>
+  </p>
+    <%= button_to "Destroy this category", @category, method: :delete, class: "btn-dest-categ" %>
+  </div>
+</div>
+
+
+
+
+
+
+

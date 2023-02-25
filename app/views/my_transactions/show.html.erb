@@ -1,0 +1,15 @@
+<p style="color: green"><%= notice %></p>
+
+<div class="details-wrapper">
+
+<%= render @my_transaction %>
+
+<div class="details-links">
+  <%= link_to "Edit this transaction", edit_category_my_transaction_path(category_id: @category.id,
+  id: @my_transaction.id), class: "details-edit-link" %>
+
+
+  <%= button_to "Remove this transaction", category_my_transaction_path(category_id: @category.id,
+  id: @my_transaction.id),
+   method: :delete, class:"details-delete-btn" %>
+</div>

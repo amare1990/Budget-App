@@ -1,0 +1,12 @@
+<h1>Editing my transaction</h1>
+
+<%= render "form", my_transaction: @my_transaction %>
+
+<br>
+
+<div>
+  <%= link_to "Show this my transaction", category_my_transaction_path(category_id: @category.id,
+  id: @my_transaction.id) %> |
+  <%= link_to "Back to my transactions", category_my_transaction_path(category_id: @category.id,
+  id: @my_transaction.id) %>
+</div>
